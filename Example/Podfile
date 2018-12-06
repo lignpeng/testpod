@@ -1,4 +1,4 @@
-use_frameworks!
+inhibit_all_warnings!
 
 platform :ios, '8.0'
 
@@ -8,9 +8,5 @@ target 'testpod_Example' do
   target 'testpod_Tests' do
     inherit! :search_paths
 
-    pod 'Specta'
-    pod 'Expecta'
-    pod 'FBSnapshotTestCase'
-    pod 'Expecta+Snapshots'
   end
 end
