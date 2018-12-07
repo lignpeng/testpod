@@ -37,7 +37,7 @@ TODO: Add long description of the pod here.
   # }
 
 #公开外包调用的头文件
-  s.public_header_files = 'Pod/Classes/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
+  s.public_header_files = 'testpod/Classes/*.h'
+  s.frameworks = 'UIKit'
   # s.dependency 'AFNetworking', '~> 2.3'
 end

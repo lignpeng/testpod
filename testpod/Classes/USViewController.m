@@ -27,7 +27,7 @@
     UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(margin, margin * 3, CGRectGetWidth(sframe) - margin * 2, 42)];
     [button addTarget:self action:@selector(action) forControlEvents:UIControlEventTouchUpInside];
     [button setTitle:@"action" forState:UIControlStateNormal];
-    button.backgroundColor = [UIColor colorWithRed:arc4random()/256.0 green:arc4random()/256.0 blue:arc4random()/256.0 alpha:1];
+    button.backgroundColor = [UIColor colorWithRed:arc4random()%256/256.0 green:arc4random()%256/256.0 blue:arc4random()%256/256.0 alpha:1];
     button.layer.cornerRadius = 5;
     button.clipsToBounds = YES;
     [self.view addSubview:button];
@@ -38,7 +38,9 @@
 }
 
 - (void)action {
-        //    do something.
+    if (self.actionBlock){
+        [self showString:self.actionBlock()];
+    }
 }
 
 - (void)showString:(NSArray *)array {

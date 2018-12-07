@@ -7,13 +7,21 @@
 //
 
 #import "ClassesAppDelegate.h"
-#import <testpod/>
+#import <testpod/USViewController.h>
+
 @implementation ClassesAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-    
+    USViewController *vc = [USViewController new];
+    vc.actionBlock = ^NSArray<NSString *> *{
+        return @[@"abcd"];
+    };
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    self.window.rootViewController = nav;
+    [self.window makeKeyAndVisible];
     return YES;
 }
 
